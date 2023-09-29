@@ -43,8 +43,8 @@ classdef (Sealed) bitalino < matlab.mixin.SetGet & matlab.mixin.CustomDisplay
     %       % 0570B282CF53 on Windows
     %       b = bitalino("0570B282CF53")
     %
-    %       % Connect to a Bluetooth Low Energy peripheral with address
-    %       % 5E4F4F17-7A25-4AB3-AA67-B68355FB5D78 on Mac
+    %       % Connect to a BITalino peripheral device with address
+    %       % 5E4F4F17-7A25-4AB3-AA67-B68355FB5D78 on macOS
     %       b = bitalino("5E4F4F17-7A25-4AB3-AA67-B68355FB5D78")
     %
     %       % Connect to BITalino and set the SampleRate to 100

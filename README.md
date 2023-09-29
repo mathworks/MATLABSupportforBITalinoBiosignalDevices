@@ -1,6 +1,6 @@
 # MATLAB&reg; Support for BITalino&trade; Biosignal Devices 
 
-[![View <File Exchange Title> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  
+[![View <File Exchange Title> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/136004-matlab-support-for-bitalino-biosignal-devices)  
 
 Use MATLAB Support for BITalino Biosignal Devices to connect and acquire biosignal data from the BITalino (r)evolution board and other BITalino (r)evolution Plugged kits.
 

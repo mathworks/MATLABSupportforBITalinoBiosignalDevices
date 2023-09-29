@@ -1,0 +1,14 @@
+<!-- Copyright 2023 The MathWorks, Inc. -->
+<Messages>
+    <!-- Error Messages -->
+    <unsupportedPlatform>Connection to BITalino is not supported on Linux</unsupportedPlatform>
+    <failedConnect>Unable to connect to BITalino. Make sure the device is paired and in range.</failedConnect>
+    <connectionExists>Connection to the BITalino device exists in the workspace. Clear the existing connection and try again.</connectionExists>
+    <invalidIdentifierValue>Unable to find paired device with specified name or address.</invalidIdentifierValue>
+    <failedConnectWithArgs>Unable to connect to BITalino with the specified arguments. Make sure the device is paired and in range.</failedConnectWithArgs>
+    <duplicatePinValue>Duplicate pin values specified.</duplicatePinValue>
+    <mismatchedPinValue>Pins and values must be of the same size.</mismatchedPinValue>
+    <invalidReadArguments>Invalid input combination. Specify either number of samples or duration.</invalidReadArguments>
+    <noDeviceFound>No BITalino device detected.</noDeviceFound>
+    <failedRead>Unable to receive data from BITalino. Restart the device, clear the existing bitalino object, and create a new connection.</failedRead>
+</Messages>

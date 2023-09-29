@@ -1,0 +1,64 @@
+{
+    "bitalino":
+    {
+        "inputs":
+        [
+            {"name":"Name","kind":"required", "type":[["char","string"], "choices = matlabshared.bitalinolib.internal.bitalinoTabCompletionHelper('name')"]},
+            {"name":"SampleRate", "kind":"namevalue", "type":["numeric", "choices = {1000, 100, 10, 1}"], "default":"1000"}
+        ],
+
+        "outputs":
+        [
+            {"name":"obj", "type":"bitalino"}
+        ]
+    },
+    "bitalino":
+    {
+        "inputs":
+        [
+            {"name":"Address","kind":"required", "type":[["char","string"], ["choices=matlabshared.bitalinolib.internal.bitalinoTabCompletionHelper('address')"]]},
+            {"name":"SampleRate", "kind":"namevalue", "type":["numeric", "choices = {1000, 100, 10, 1}"], "default":"1000"}
+        ],
+
+        "outputs":
+        [
+            {"name":"obj", "type":"bitalino"}
+        ]
+    },
+    "read":
+    {
+        "inputs":
+        [
+            {"name":"obj","kind":"required", "type":"bitalino"}
+        ]
+
+    },
+    "read":
+    {
+        "inputs":
+        [
+            {"name":"obj","kind":"required", "type":"bitalino"},
+            {"name":"NumSamples", "kind":"namevalue", "type":"double"}
+        ]
+
+    },
+    "read":
+    {
+        "inputs":
+        [
+            {"name":"obj","kind":"required", "type":"bitalino"},
+            {"name":"Duration", "kind":"namevalue", "type":"double"}
+        ]
+
+    },
+    "writeDigitalPins":
+    {
+        "inputs":
+        [
+            {"name":"obj","kind":"required", "type":"bitalino"},
+            {"name":"pins", "kind":"required", "type":["char", "choices = {'O1', 'O2'}"]},
+            {"name":"values", "kind":"required", "type":["logical", "choices = {true, false}"]}
+        ]
+
+    }
+}

@@ -1,0 +1,42 @@
+# Autosave files
+#
+# Copyright 2023 The MathWorks, Inc.
+*.asv
+*.m~
+*.autosave
+*.slx.r*
+*.mdl.r*
+
+# Derived content-obscured files
+*.p
+
+# Compiled MEX files
+*.mex*
+
+# Packaged app and toolbox files
+*.mlappinstall
+*.mltbx
+
+# Deployable archives
+*.ctf
+
+# Generated helpsearch folders
+helpsearch*/
+
+# Code generation folders
+slprj/
+sccprj/
+codegen/
+
+# Cache files
+*.slxc
+
+# Cloud based storage dotfile
+.MATLABDriveTag
+
+# MATLAB Support for BITalino Biosignal Device specific
+**/*.csv
+**/*.zip
+toolbox/doc/html/**
+reports/**
+release/**

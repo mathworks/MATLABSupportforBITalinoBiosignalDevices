@@ -6,7 +6,7 @@ Use MATLAB Support for BITalino Biosignal Devices to connect and acquire biosign
 
 ## Installation and Setup 
 - Install MATLAB. 
-- Install MATLAB Support for BITalino Biosignal Devices toolbox using the Add-on explorer in MATLAB, or by downloading the _bitalinosupport.mltbx_ file attached to the latest release on GitHub, then doubleclicking on it.
+- Install MATLAB Support for BITalino Biosignal Devices toolbox using the Add-on explorer in MATLAB, or by downloading the _MATLABSupportforBITalinoBiosignalDevices_va.b.c.d.mltbx_ file attached to the latest release on GitHub, then doubleclicking on it.
 
 ### MathWorks Products (https://www.mathworks.com)
 Requires MATLAB release - R2023a or later.

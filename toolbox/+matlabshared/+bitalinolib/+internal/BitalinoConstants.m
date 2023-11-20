@@ -79,11 +79,11 @@ classdef BitalinoConstants < handle
         % Shifiting factor for first analog channel of the data packet
         ShiftForChannel1 = -2;
         % Shifiting factor for third analog channel of the data packet
-        ShiftForChannel3 = 6;
+        ShiftForChannel3 = -6;
         % Shifiting factor for fourth analog channel of the data packet
-        ShiftForChannel4 = 4;
+        ShiftForChannel4 = -4;
         % Shifiting factor for fifth analog channel of the data packet
-        ShiftForChannel5 = 6;
+        ShiftForChannel5 = -6;
     end
 
 end

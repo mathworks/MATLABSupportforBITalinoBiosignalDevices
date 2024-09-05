@@ -2,7 +2,7 @@ classdef BitalinoConstants < handle
     %BITALINOCONSTANTS - Class that stores constant values used throughout
     % MATLAB Support for BITalino Devices
 
-    %   Copyright 2023 The MathWorks, Inc.
+    %   Copyright 2023-2024 The MathWorks, Inc.
 
     properties(Constant, GetAccess = public)
         % BITalino sends 8 bytes in a data packet consisting all 6 Analog
@@ -84,6 +84,9 @@ classdef BitalinoConstants < handle
         ShiftForChannel4 = -4;
         % Shifiting factor for fifth analog channel of the data packet
         ShiftForChannel5 = -6;
+
+        % Number of Bytes to read per read cycle
+        BytesPerSingleRead = 100000;
     end
 
 end

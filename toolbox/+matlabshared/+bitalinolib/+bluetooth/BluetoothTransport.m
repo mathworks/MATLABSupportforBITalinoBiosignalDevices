@@ -2,7 +2,7 @@ classdef BluetoothTransport < matlabshared.bitalinolib.internal.TransportBase
     %BLUETOOTHTRANSPORT Bluetooth Classic transport class to communicate
     % with BITalino
 
-    % Copyright 2023 The MathWorks, Inc.
+    % Copyright 2023-2024 The MathWorks, Inc.
     properties (Access = private)
         % Bluetooth Classic transport layer object
         BluetoothDevice
@@ -93,13 +93,42 @@ classdef BluetoothTransport < matlabshared.bitalinolib.internal.TransportBase
                         % Number of samples for reading provided
                         obj.NumBytesToRead = options.NumSamples*BitalinoConstants.NumBytesPerSample;
                     end
+                    write(obj,obj.ReadMode);
                     % Switch from Idle mode to live or simulated mode for
-                    % reading
-                    write(obj, obj.ReadMode);
-                    biosignalData = read(obj.BluetoothDevice, obj.NumBytesToRead, 'uint8');
-                    write(obj, BitalinoConstants.IdleMode);
+                    % reading, read bytes in cycles or at once
+                    if obj.NumBytesToRead >= BitalinoConstants.BytesPerSingleRead
+                        biosignalData = zeros(1,obj.NumBytesToRead,'uint8');
+                        % Initialize the current position in the data array
+                        currentPosition = 1;
 
+                        % Calculate the number of read cycles
+                        numReadCycles = floor(obj.NumBytesToRead/BitalinoConstants.BytesPerSingleRead);
+
+                        % Calculate the remainder bytes after the end of
+                        % read cycles
+                        remainderBytes = mod(obj.NumBytesToRead,BitalinoConstants.BytesPerSingleRead);
+
+                        % Acquire data executing all the read cycles
+                        for itr = 1:numReadCycles
+                            biosignalData(currentPosition:(currentPosition+BitalinoConstants.BytesPerSingleRead-1))...
+                                = read(obj.BluetoothDevice,BitalinoConstants.BytesPerSingleRead,'uint8');
+                            currentPosition = currentPosition+BitalinoConstants.BytesPerSingleRead;
+                        end
+
+                        % Read the remainder bytes if any
+                        if remainderBytes > 0
+                            biosignalData(currentPosition:currentPosition+remainderBytes-1)...
+                                = read(obj.BluetoothDevice,remainderBytes,'uint8');
+                        end
+                    else
+                        % If data to read is less than bytes to read per
+                        % cycle, read at once
+                        biosignalData = read(obj.BluetoothDevice,obj.NumBytesToRead,'uint8');
+                    end
+                    % Configure BITalino to stop sending data
+                    write(obj,BitalinoConstants.IdleMode);
                 end
+
                 flush(obj.BluetoothDevice);
                 if isempty(biosignalData) || length(biosignalData)~= obj.NumBytesToRead
                     error(BitalinoConstants.BitalinoMessages.failedRead);
